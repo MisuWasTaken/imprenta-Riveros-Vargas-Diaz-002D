@@ -20,6 +20,7 @@ public class TestInterfaz {
         // Acción: cerrar ventana
         boton.addActionListener(e -> ventana.dispose());
         //Hola mundo
+        //Hola mundo 2
 
         panel.add(boton);
         ventana.add(panel);
