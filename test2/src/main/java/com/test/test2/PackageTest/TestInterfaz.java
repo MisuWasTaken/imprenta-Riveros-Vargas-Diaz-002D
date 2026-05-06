@@ -25,6 +25,7 @@ public class TestInterfaz {
         //Hola mundo 4
         //Hola mundo 5
 
+        //hola mundooooooooooooooooooooooooooo loco mundo cruel
         
 
         panel.add(boton);
