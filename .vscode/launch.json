@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceProfesoresApplication<service-profesores>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_profesores.ServiceProfesoresApplication",
+            "projectName": "service-profesores",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,7 +1,11 @@
-profeeeeeeee
+Para probar el postman lo primero que hice fue: "GET" http://localhost:8081/profesores y me mostro un [] Indicando que todo esta bien.
+Luego en "POST", body, raw use este codigo para agregar un dato: 
 
+{
+  "nombre": "Francisco",
+  "apellido": "Riveros",
+  "correo": "franciscoriveros@duocuc.cl",
+  "telefono": "953809086"
+}
+Luego se usa "GET" http://localhost:8081/profesores/1 para verificar que funciono correctamente
 
-
-00:58 06-05 DD: me tire un chancho mientras hacia el codigo jeje like
-
-00:59 06-05 Se creo la Branch Asignaturas y se hizo el codigo de model, repository y services y controller
