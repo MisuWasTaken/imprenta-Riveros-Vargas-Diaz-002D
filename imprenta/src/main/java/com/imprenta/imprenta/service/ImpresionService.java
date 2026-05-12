@@ -2,7 +2,7 @@ package com.imprenta.imprenta.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.imprenta.imprenta.model.Impresion;
+import com.imprenta.imprenta.model.ImpresionModel;
 import com.imprenta.imprenta.repository.a.ImpresionRepository;
 
 public class ImpresionService 
@@ -10,17 +10,17 @@ public class ImpresionService
     @Autowired
     private ImpresionRepository impresionRepository;
 
-    public List<Impresion> listar() 
+    public List<ImpresionModel> listar() 
     {
         return impresionRepository.findAll();
     }
 
-    public Impresion guardar(Impresion impresion) 
+    public ImpresionModel guardar(ImpresionModel impresion) 
     {
         return impresionRepository.save(impresion);
     }
 
-    public Impresion buscarPorId(Integer id) 
+    public ImpresionModel buscarPorId(Integer id) 
     {
         return impresionRepository.findById(id).orElse(null);
     }

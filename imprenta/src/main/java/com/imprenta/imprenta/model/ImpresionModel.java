@@ -6,10 +6,23 @@ import jakarta.persistence.*;
 public class ImpresionModel 
 {
  @Id
-    public Impresion(Integer idImpresion, String documento,
-                      Integer cantidadCopias, String fecha,
-                      String estado, String asignatura,
-                      String profesor, String curso) {
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
+        this.idImpresion = idImpresion;
+        this.documento = documento;
+        this.cantidadCopias = cantidadCopias;
+        this.fecha = fecha;
+        this.estado = estado;
+        this.asignatura = asignatura;
+        this.profesor = profesor;
+        this.curso = curso;
+    }
+    public ImpresionModel() 
+    {
+    }
+
+    public ImpresionModel(Integer idImpresion, String documento, Integer cantidadCopias, 
+                          String fecha, String estado, String asignatura, 
+                          String profesor, String curso) {
         this.idImpresion = idImpresion;
         this.documento = documento;
         this.cantidadCopias = cantidadCopias;
@@ -86,7 +99,7 @@ public class ImpresionModel
     }
 
     public void setProfesor(String profesor) 
-    
+    {
         this.profesor = profesor;
     }
 
