@@ -1,23 +1,24 @@
 package com.imprenta.imprenta.model;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "impresion")
-public class ImpresionModel 
-{
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
-        this.idImpresion = idImpresion;
-        this.documento = documento;
-        this.cantidadCopias = cantidadCopias;
-        this.fecha = fecha;
-        this.estado = estado;
-        this.asignatura = asignatura;
-        this.profesor = profesor;
-        this.curso = curso;
-    }
-    public ImpresionModel() 
-    {
+public class ImpresionModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idImpresion;
+
+    private String documento;
+    private Integer cantidadCopias;
+    private String fecha;
+    private String estado;
+    private String asignatura;
+    private String profesor;
+    private String curso;
+
+    public ImpresionModel() {
     }
 
     public ImpresionModel(Integer idImpresion, String documento, Integer cantidadCopias, 
@@ -33,83 +34,28 @@ public class ImpresionModel
         this.curso = curso;
     }
 
-    public Integer getIdImpresion() 
-    {
-        return idImpresion;
-    }
+    // Getters y Setters
+    public Integer getIdImpresion() { return idImpresion; }
+    public void setIdImpresion(Integer idImpresion) { this.idImpresion = idImpresion; }
 
-    public void setIdImpresion(Integer idImpresion) 
-    {
-        this.idImpresion = idImpresion;
-    }
+    public String getDocumento() { return documento; }
+    public void setDocumento(String documento) { this.documento = documento; }
 
-    public String getDocumento() 
-    {
-        return documento;
-    }
+    public Integer getCantidadCopias() { return cantidadCopias; }
+    public void setCantidadCopias(Integer cantidadCopias) { this.cantidadCopias = cantidadCopias; }
 
-    public void setDocumento(String documento) 
-    {
-        this.documento = documento;
-    }
+    public String getFecha() { return fecha; }
+    public void setFecha(String fecha) { this.fecha = fecha; }
 
-    public Integer getCantidadCopias() 
-    {
-        return cantidadCopias;
-    }
+    public String getEstado() { return estado; }
+    public void setEstado(String estado) { this.estado = estado; }
 
-    public void setCantidadCopias(Integer cantidadCopias) 
-    {
-        this.cantidadCopias = cantidadCopias;
-    }
+    public String getAsignatura() { return asignatura; }
+    public void setAsignatura(String asignatura) { this.asignatura = asignatura; }
 
-    public String getFecha() 
-    {
-        return fecha;
-    }
+    public String getProfesor() { return profesor; }
+    public void setProfesor(String profesor) { this.profesor = profesor; }
 
-    public void setFecha(String fecha) 
-    {
-        this.fecha = fecha;
-    }
-
-    public String getEstado() 
-    {
-        return estado;
-    }
-
-    public void setEstado(String estado) 
-    {
-        this.estado = estado;
-    }
-
-    public String getAsignatura() 
-    {
-        return asignatura;
-    }
-
-    public void setAsignatura(String asignatura) 
-    {
-        this.asignatura = asignatura;
-    }
-
-    public String getProfesor() 
-    {
-        return profesor;
-    }
-
-    public void setProfesor(String profesor) 
-    {
-        this.profesor = profesor;
-    }
-
-    public String getCurso() 
-    {
-        return curso;
-    }
-
-    public void setCurso(String curso) 
-    {
-        this.curso = curso;
-    }
-
+    public String getCurso() { return curso; }
+    public void setCurso(String curso) { this.curso = curso; }
+}

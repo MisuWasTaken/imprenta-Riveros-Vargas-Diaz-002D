@@ -1,34 +1,32 @@
 package com.imprenta.imprenta.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import com.imprenta.imprenta.model.ImpresionModel;
 import com.imprenta.imprenta.service.ImpresionService;
 
-public class ImpresionControl 
-{
- @Autowired
+@RestController
+@RequestMapping("/api/impresiones")
+public class ImpresionControl {
+
+    @Autowired
     private ImpresionService impresionService;
 
     @GetMapping
-    public List<Impresion> listar() 
+    public List<ImpresionModel> listar() 
     {
         return impresionService.listar();
     }
 
     @PostMapping
-    public Impresion guardar(@RequestBody Impresion impresion) 
+    public ImpresionModel guardar(@RequestBody ImpresionModel impresion) 
     {
         return impresionService.guardar(impresion);
     }
 
     @GetMapping("/{id}")
-    public Impresion buscar(@PathVariable Integer id) 
+    public ImpresionModel buscar(@PathVariable Integer id) 
     {
         return impresionService.buscarPorId(id);
     }
