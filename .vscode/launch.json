@@ -9,6 +9,16 @@
             "projectName": "service-profesores",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceAsignaturasApplication<service-asignaturas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_asignaturas.ServiceAsignaturasApplication",
+            "projectName": "service-asignaturas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
