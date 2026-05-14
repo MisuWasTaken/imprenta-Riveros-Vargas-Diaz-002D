@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import com.imprenta.service_asignaturas.model.Asignatura;
 import com.imprenta.service_asignaturas.service.AsignaturaService;
 
-@RestController
 @RequestMapping("/asignaturas")
 public class AsignaturaController 
 {
