@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: profesores-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/profesores/**
+
+        - id: asignaturas-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/asignaturas/**
+
+        - id: cursos-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/cursos/**
+            
+        - id: historial-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/historial/**
+
+        - id: impresiones-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/impresiones/**
