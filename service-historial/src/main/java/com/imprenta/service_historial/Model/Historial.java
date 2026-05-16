@@ -15,12 +15,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @NoArgsConstructor
 public class Historial 
 {
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss") //Import que hice para que sea mas facil de leer la f
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private Long impresionId; //Id de la impresion reflejada en el historial 
     private String accion; //Creada, actualizada, eliminada
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss") //Import que hice para que sea mas facil de leer la f
     private LocalDateTime fecha;
-    
 }
