@@ -39,7 +39,8 @@
             "mainClass": "com.imprenta.service_cursos.ServiceCursosApplication",
             "projectName": "service-cursos",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -48,6 +49,17 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.imprenta.service_historial.ServiceHistorialApplication",
             "projectName": "service-historial",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceImpresionesApplication<service-impresiones>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_impresiones.ServiceImpresionesApplication",
+            "projectName": "service-impresiones",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
