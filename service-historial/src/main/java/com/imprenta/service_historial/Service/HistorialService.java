@@ -28,4 +28,15 @@ public class HistorialService
         historial.setFecha(LocalDateTime.now());
         return historialRepository.save(historial);
     }
+    
+    public Historial buscarPorId(Long id) 
+    {
+        return historialRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("No encontrado"));
+    }
+
+    public void eliminar(Long id) 
+    {
+        historialRepository.deleteById(id);
+    }
 }

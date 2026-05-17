@@ -25,4 +25,22 @@ public class ImpresionController
     {
         return impresionService.guardar(impresion);
     }
+
+     @PutMapping("/{id}/listo")
+    public Impresion marcarListo(@PathVariable Long id)
+    {
+        return impresionService.marcarComoListo(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) 
+    {
+    impresionService.eliminar(id);}
+
+    @GetMapping("/{id}")
+    public Impresion obtenerPorId(@PathVariable Long id) 
+    {
+        return impresionService.buscarPorId(id);
+    }
+
 }

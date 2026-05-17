@@ -1,17 +1,13 @@
-package com.imprenta.imprenta;
+package com.imprenta.api_gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import lombok.Data;
-
-@Data
-
 @SpringBootApplication
-public class ImprentaApplication {
+public class ApiGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ImprentaApplication.class, args);
+		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
 }

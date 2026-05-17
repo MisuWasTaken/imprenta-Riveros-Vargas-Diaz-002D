@@ -1,10 +1,10 @@
-package com.imprenta.imprenta;
+package com.imprenta.api_gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ImprentaApplicationTests {
+class ApiGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {

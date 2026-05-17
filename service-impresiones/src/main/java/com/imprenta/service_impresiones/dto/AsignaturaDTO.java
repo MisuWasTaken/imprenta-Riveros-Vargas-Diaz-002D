@@ -5,5 +5,6 @@ import lombok.Data;
 public class AsignaturaDTO
 {
     private Long id;
+    private String sigla;
     private String nombre;
 }
