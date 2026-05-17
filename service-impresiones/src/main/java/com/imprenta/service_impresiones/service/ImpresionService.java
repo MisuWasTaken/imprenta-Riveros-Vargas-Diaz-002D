@@ -1,12 +1,17 @@
 package com.imprenta.service_impresiones.service;
+
 import com.imprenta.service_impresiones.dto.*;
 import com.imprenta.service_impresiones.model.Impresion;
 import com.imprenta.service_impresiones.repository.ImpresionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ImpresionService {
@@ -16,6 +21,8 @@ public class ImpresionService {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     public List<Impresion> listarTodas() {
         List<Impresion> lista = impresionRepository.findAll();
@@ -34,7 +41,12 @@ public class ImpresionService {
 
         impresion.setFechaSolicitud(LocalDateTime.now());
         impresion.setEstado("PENDIENTE");
-        return impresionRepository.save(impresion);
+
+        Impresion guardada = impresionRepository.save(impresion);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String fechaFormateada = guardada.getFechaSolicitud().format(formatter);
+        this.Historial(guardada.getId(), fechaFormateada);
+        return guardada;
     }
 
     public Impresion marcarComoListo(Long id) {
@@ -69,6 +81,21 @@ public class ImpresionService {
                     .retrieve().bodyToMono(CursoDTO.class).block());
         } catch (Exception e) {
             System.err.println("Error al conectar con microservicios externos: " + e.getMessage());
+        }
+    }
+
+    private void Historial(Long impresionId, String fecha) 
+    {
+        String url = "http://localhost:8084/historial";
+        Map<String, Object> historial = new HashMap<>();
+        historial.put("impresionId", impresionId);
+        historial.put("accion", "CREADA");
+        historial.put("fecha", fecha);
+        try 
+        {
+            restTemplate.postForEntity(url, historial, String.class);
+        } catch (Exception e) {
+            System.err.println("Error de comunicación con historial: " + e.getMessage());
         }
     }
 }
