@@ -21,3 +21,10 @@ ed fisica
 mecanica
 electricidad
 enfermeria
+
+Este proyecto tiene como objetivo facilitar y hacer mucho mas llevadero el tener una constancia de las impresiones y poder manejarlas de mucha mejor manera.
+
+Integrantes:
+Damian Diaz
+Francisco Riveros
+Georgina Vargas
