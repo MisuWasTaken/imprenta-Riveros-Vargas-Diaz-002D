@@ -10,4 +10,5 @@ public class ServiceImpresionesApplication {
 		SpringApplication.run(ServiceImpresionesApplication.class, args);
 	}
 
+
 }
