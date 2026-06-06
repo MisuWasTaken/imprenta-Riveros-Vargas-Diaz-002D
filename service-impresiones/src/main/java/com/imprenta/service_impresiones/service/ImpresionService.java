@@ -31,28 +31,29 @@ public class ImpresionService {
     }
 
     public Impresion guardar(Impresion impresion) {
-        webClientBuilder.build().get()
-                .uri("http://localhost:8081/profesores/" + impresion.getProfesorId())
-                .retrieve().bodyToMono(ProfesorDTO.class).block();
 
-        webClientBuilder.build().get()
-                .uri("http://localhost:8083/cursos/" + impresion.getCursoId())
-                .retrieve().bodyToMono(CursoDTO.class).block();
+    impresion.setFechaSolicitud(LocalDateTime.now());
+    impresion.setEstado("PENDIENTE");
 
-        impresion.setFechaSolicitud(LocalDateTime.now());
-        impresion.setEstado("PENDIENTE");
+    Impresion guardada = impresionRepository.save(impresion);
 
-        Impresion guardada = impresionRepository.save(impresion);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String fechaFormateada = guardada.getFechaSolicitud().format(formatter);
-        this.Historial(guardada.getId(), fechaFormateada);
-        return guardada;
-    }
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    String fechaFormateada = guardada.getFechaSolicitud().format(formatter);
+
+    this.Historial(guardada.getId(), fechaFormateada);
+
+    completarInformacion(guardada);
+
+    return guardada;
+}
 
     public Impresion marcarComoListo(Long id) {
         Impresion impresion = buscarPorId(id);
         impresion.setEstado("LISTO");
-        return impresionRepository.save(impresion);
+
+        Impresion guardada = impresionRepository.save(impresion);
+        completarInformacion(guardada);
+        return guardada;
     }
 
     public Impresion buscarPorId(Long id) {

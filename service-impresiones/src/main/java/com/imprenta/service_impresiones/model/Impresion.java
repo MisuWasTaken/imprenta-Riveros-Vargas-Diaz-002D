@@ -12,8 +12,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.imprenta.service_impresiones.dto.AsignaturaDTO;
 import com.imprenta.service_impresiones.dto.CursoDTO;
 import com.imprenta.service_impresiones.dto.ProfesorDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-   
+
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -23,10 +25,16 @@ public class Impresion
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long profesorId;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private Long profesorId;
+    
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long asignaturaId;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Long cursoId;
+
     private Integer cantidadCopias; 
     private String estado;
 
