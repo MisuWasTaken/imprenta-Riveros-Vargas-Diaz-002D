@@ -23,3 +23,22 @@ Integrantes:
 Damian Diaz
 Francisco Riveros
 Georgina Vargas
+
+
+
+
+
+Para ver Profesores:
+http://localhost:8081/swagger-ui.html
+
+Para ver las Asginaturas:
+http://localhost:8082/swagger-ui.html
+
+Para ver los Cursos:
+http://localhost:8083/swagger-ui.html
+
+Para ver el Historial:
+http://localhost:8084/swagger-ui.html
+
+Para ver las impresiones:
+http://localhost:8085/swagger-ui.html
