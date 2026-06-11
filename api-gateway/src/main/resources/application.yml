@@ -35,3 +35,8 @@ spring:
           uri: http://localhost:8086
           predicates:
             - Path=/inventario/**
+
+        - id: cola-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/cola/**

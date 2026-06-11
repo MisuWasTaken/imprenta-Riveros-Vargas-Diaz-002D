@@ -82,6 +82,16 @@
             "projectName": "service-inventario",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceColaApplication<service-cola>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_cola.ServiceColaApplication",
+            "projectName": "service-cola",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
