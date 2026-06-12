@@ -29,16 +29,10 @@ public class CalidadController {
 		return calidadService.guardar(calidad);
 	}
 
-	@Operation(summary = "Aprobar revisión", description = "Marca la revisión de calidad como aprobada")
-	@PutMapping("/{id}/aprobar")
-	public CalidadModel aprobar(@PathVariable Long id) {
-		return calidadService.aprobar(id);
-	}
-
-	@Operation(summary = "Rechazar revisión", description = "Marca la revisión de calidad como rechazada")
-	@PutMapping("/{id}/rechazar")
-	public CalidadModel rechazar(@PathVariable Long id) {
-		return calidadService.rechazar(id);
+	@Operation(summary = "Actualizar revisión", description = "Actualiza los datos de una revisión de calidad existente")
+	@PutMapping("/{id}")
+	public CalidadModel actualizar(@PathVariable Long id, @RequestBody CalidadModel calidad) {
+		return calidadService.actualizar(id, calidad);
 	}
 
 	@Operation(summary = "Eliminar revisión", description = "Elimina una revisión de calidad")

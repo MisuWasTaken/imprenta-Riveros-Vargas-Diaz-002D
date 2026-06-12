@@ -19,8 +19,7 @@ public class CalidadModel {
 	private Long id;
 
 	private Long impresionId;
-	private Long inspectorId;
-	private String estado;
-	private String observaciones;
+	private Integer cantidadDefectuosas;
+	private String notasExtras;
 
 }
