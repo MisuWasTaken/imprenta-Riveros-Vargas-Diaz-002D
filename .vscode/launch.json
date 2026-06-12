@@ -8,7 +8,8 @@
             "mainClass": "com.imprenta.service_profesores.ServiceProfesoresApplication",
             "projectName": "service-profesores",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -61,7 +62,8 @@
             "mainClass": "com.imprenta.service_impresiones.ServiceImpresionesApplication",
             "projectName": "service-impresiones",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -71,7 +73,8 @@
             "mainClass": "com.imprenta.api_gateway.ApiGatewayApplication",
             "projectName": "api-gateway",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -81,7 +84,8 @@
             "mainClass": "com.imprenta.service_inventario.ServiceInventarioApplication",
             "projectName": "service-inventario",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -91,7 +95,8 @@
             "mainClass": "com.imprenta.service_cola.ServiceColaApplication",
             "projectName": "service-cola",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
         },
         {
             "type": "java",
@@ -100,6 +105,17 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.imprenta.service_calidad.ServiceCalidadApplication",
             "projectName": "service-calidad",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicePrioridadApplication<service_prioridad>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_prioridad.ServicePrioridadApplication",
+            "projectName": "service_prioridad",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
