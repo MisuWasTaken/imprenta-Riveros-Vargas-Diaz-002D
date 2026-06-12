@@ -92,6 +92,16 @@
             "projectName": "service-cola",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceCalidadApplication<service-calidad>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_calidad.ServiceCalidadApplication",
+            "projectName": "service-calidad",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
