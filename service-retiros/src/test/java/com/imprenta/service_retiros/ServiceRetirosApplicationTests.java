@@ -1,10 +1,10 @@
-package com.imprenta.service_prioridad;
+package com.imprenta.service_retiros;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServicePrioridadApplicationTests {
+class ServiceRetirosApplicationTests {
 
 	@Test
 	void contextLoads() {

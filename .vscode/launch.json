@@ -118,6 +118,16 @@
             "projectName": "service_prioridad",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceRetirosApplication<service-retiros>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.imprenta.service_retiros.ServiceRetirosApplication",
+            "projectName": "service-retiros",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
