@@ -48,8 +48,11 @@ public class ColaService {
         return colaRepository.save(colaExistente);
     }
 
-    public List<ColaImpresion> listarUrgentes() 
-    {
-        return colaRepository.findByPrioridad("URGENTE");
-    }
+    public List<ColaImpresion> listarUrgentes() {
+    return colaRepository.findAll()
+            .stream()
+            .filter(c -> c.getPrioridad() != null && c.getPrioridad().equalsIgnoreCase("urgente"))
+            .filter(c -> c.getEstadoCola() != null && c.getEstadoCola().equalsIgnoreCase("encola"))
+            .toList();
+}
 }

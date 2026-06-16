@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/retiros")
+@CrossOrigin(origins = "*")
 @Tag(name = "Retiros", description = "Operaciones relacionadas para saber si una impresion ha sido retirada o no")
 public class RetiroController {
 

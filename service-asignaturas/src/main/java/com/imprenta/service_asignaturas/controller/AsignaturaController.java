@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/asignaturas")
+@CrossOrigin(origins = "*")
 @Tag(name = "Asignaturas", description = "Operaciones relacionadas con las asignaturas")
 public class AsignaturaController 
 {

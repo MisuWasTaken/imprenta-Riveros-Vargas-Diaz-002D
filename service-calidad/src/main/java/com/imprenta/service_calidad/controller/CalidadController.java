@@ -11,13 +11,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/calidad")
+@CrossOrigin(origins = "*")
 @Tag(name = "Calidad", description = "Operaciones relacionadas con la calidad de impresiones")
 public class CalidadController {
 
 	@Autowired
 	private CalidadService calidadService;
 
-	@Operation(summary = "Mostrar todas las revisiones de calidad", description = "Muestra todas las anotaciones de calidad registradas")
+	@Operation(summary = "Mostrar todas las anotaciones de calidad", description = "Muestra todas las anotaciones de calidad registradas")
 	@GetMapping
 	public List<CalidadModel> listar() {
 		return calidadService.listarTodas();

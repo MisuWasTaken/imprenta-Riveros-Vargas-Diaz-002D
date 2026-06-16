@@ -42,3 +42,15 @@ http://localhost:8084/swagger-ui.html
 
 Para ver las impresiones:
 http://localhost:8085/swagger-ui.html
+
+Para ver inventario:
+http://localhost:8086/swagger-ui/index.html#/
+
+Para ver la cola de impresion:
+http://localhost:8087/swagger-ui/index.html#/
+
+Para ver las revisiones de calidad:
+http://localhost:8088/swagger-ui/index.html#/
+
+Para ver el estado de retiros:
+http://localhost:8089/swagger-ui/index.html#/

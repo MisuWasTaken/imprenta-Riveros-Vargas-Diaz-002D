@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cola")
+@CrossOrigin(origins = "*")
 @Tag(name = "Cola de impresión", description = "Todo lo relacionado con la cola de impresion")
 public class ColaController {
 

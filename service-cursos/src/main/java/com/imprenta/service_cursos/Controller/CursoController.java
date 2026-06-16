@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/cursos")
+@CrossOrigin(origins = "*")
 @Tag(name = "Cursos", description = "Todo lo relacionado con los cursos")
 public class CursoController 
 {
@@ -23,7 +24,7 @@ public class CursoController
         return cursoService.listarTodos();
     }
 
-    @Operation(summary = "Obtener curso", description = "Obtiene un curso por la ID")   
+    @Operation(summary = "Buscar un curso por ID", description = "Obtiene un curso por la ID")   
     @GetMapping("/{id}")
     public ResponseEntity<Curso> obtener(@PathVariable Long id) 
     {
@@ -46,14 +47,14 @@ public class CursoController
         return ResponseEntity.ok(cursoService.guardar(curso));
     }
 
-    @Operation(summary = "Actualizar curso", description = "Actualiza los datos de un curso por id")
+    @Operation(summary = "Actualizar un curso por ID", description = "Actualiza los datos de un curso por id")
     @PutMapping("/{id}")
     public ResponseEntity<Curso> actualizar(@PathVariable Long id, @RequestBody Curso curso) 
     {
         return ResponseEntity.ok(cursoService.actualizar(id, curso));
     }
 
-    @Operation(summary = "Eliminar curso", description = "Elimina un curso por su ID")
+    @Operation(summary = "Eliminar curso por ID", description = "Elimina un curso por su ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) 
     {

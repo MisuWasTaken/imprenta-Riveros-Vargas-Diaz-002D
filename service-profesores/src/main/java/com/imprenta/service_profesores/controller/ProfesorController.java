@@ -11,13 +11,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Profesores", description = "Operaciones relacionadas con los profesores")
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/profesores")
 public class ProfesorController 
 {
     @Autowired
     private ProfesorService profesorService;
 
-    @Operation(summary = "Listar profesores", description = "Obtiene todos los profesores registrados")
+    @Operation(summary = "Mostrar todos los profesores", description = "Obtiene todos los profesores registrados")
     @GetMapping
     public List<Profesor> listar() {
         return profesorService.listarTodos();

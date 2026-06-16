@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/historial")
+@CrossOrigin(origins = "*")
 @Tag(name = "Historial", description = "Operaciones relacionadas con el historial de pedidos")
 public class HistorialController 
 {

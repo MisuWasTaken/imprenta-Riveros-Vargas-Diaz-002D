@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/inventario")
+@CrossOrigin(origins = "*")
 @Tag(name = "Inventario", description = "Operaciones relacionadas con el inventario de materiales")
 public class InventarioController 
 {

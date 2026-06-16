@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/impresiones")
+@CrossOrigin(origins = "*")
 @Tag(name = "Impresiones", description = "Operaciones relacionadas con las impresiones")
 public class ImpresionController 
 {
