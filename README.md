@@ -24,6 +24,8 @@ El sistema permite administrar profesores, asignaturas, cursos, impresiones, his
 - Mockito
 - Postman
 - GitHub
+-Spring Security
+-JWT
 
 ## Arquitectura del proyecto
 
@@ -168,10 +170,14 @@ Ejemplos de rutas:
 - PUT /retiros/{id}
 - DELETE /retiros/{id}
 
+### Auth:
+
+- POST /auth/register
+- POST /auth/login
+
 # Ejemplos de JSON:
 
 ### Crear profesor:
-
 {
   "nombre": "Francisco",
   "apellido": "Riveros",
@@ -181,14 +187,12 @@ Ejemplos de rutas:
 
 
 ### Crear asignatura:
-
 {
   "sigla": "MAT",
   "nombre": "Matemáticas"
 }
 
 ### Crear curso:
-
 {
   "nombre": "1 Básico A",
   "nivel": "Básico",
@@ -196,7 +200,6 @@ Ejemplos de rutas:
 }
 
 ### Crear impresion:
-
 {
   "profesorId": 1,
   "cursoId": 1,
@@ -206,7 +209,6 @@ Ejemplos de rutas:
 }
 
 ### Crear material de inventario:
-
 {
   "nombre": "Resma carta",
   "cantidad": 20,
@@ -214,7 +216,6 @@ Ejemplos de rutas:
 }
 
 ### Crear registro en cola:
-
 {
   "impresionId": 3,
   "prioridad": "urgente",
@@ -233,6 +234,20 @@ Ejemplos de rutas:
 {
   "impresionId": 3,
   "estadoRetiro": "pendiente"
+}
+
+### Registrar usuario:
+{
+  "nombreUsuario": "admin",
+  "contraseña": "1234",
+  "correo": "admin@imprenta.cl",
+  "roles": []
+}
+
+### Logearse:
+{
+  "nombreUsuario": "admin",
+  "contraseña": "1234"
 }
 
 ## Swagger
@@ -281,4 +296,4 @@ El proyecto contiene pruebas unitarias con JUnit y Mockito en 6 de ellos los cua
 
 ## Estado del proyecto
 
-El sistema cuenta con microservicios funcionales, API Gateway, Swagger centralizado, pruebas unitarias y comunicacion entre servicios.
+El sistema cuenta con microservicios funcionales, API Gateway, Swagger centralizado, pruebas unitarias y comunicacion entre servicios. Tambien incluye JWT y auth.

@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
-    @Value("${jwt.auth.url}")
+    @Value("${jwt.secret}")
     private String secretito;
     public AuthenticationFilter() {
         super(Config.class);
@@ -27,7 +27,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         return (exchange, chain) -> {
             String authHeader = exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
             if (authHeader == null || !authHeader.startsWith("Bearer ")){
-                return onError(exchange, err:"Token incorrecto o formato invalido", HttpStatus.UNAUTHORIZED);
+                return onError(exchange, "Token incorrecto o formato invalido", HttpStatus.UNAUTHORIZED);
             }
             String token = authHeader.substring(7);
             try {
@@ -36,7 +36,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     .build()
                     .parseClaimsJws(token);
             } catch (Exception e) {
-                return onError(exchange, err:"Token invalido", HttpStatus.UNAUTHORIZED);
+                return onError(exchange, "Token incorrecto o formato invalido", HttpStatus.UNAUTHORIZED);
             }
             return chain.filter(exchange);
         };
