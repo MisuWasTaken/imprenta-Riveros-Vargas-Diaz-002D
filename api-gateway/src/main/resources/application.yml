@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 jwt:
   secret: "8234759834576908347905687345906873409568734956789034856734"
 
@@ -9,73 +10,118 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: auth-service
+          uri: http://localhost:8090
+          predicates:
+            - Path=/auth/**
+
+        - id: profesores-docs
+          uri: http://localhost:8081
+          predicates:
+            - Path=/profesores/v3/api-docs
+
+        - id: asignaturas-docs
+          uri: http://localhost:8082
+          predicates:
+            - Path=/asignaturas/v3/api-docs
+
+        - id: cursos-docs
+          uri: http://localhost:8083
+          predicates:
+            - Path=/cursos/v3/api-docs
+
+        - id: historial-docs
+          uri: http://localhost:8084
+          predicates:
+            - Path=/historial/v3/api-docs
+
+        - id: impresiones-docs
+          uri: http://localhost:8085
+          predicates:
+            - Path=/impresiones/v3/api-docs
+
+        - id: inventario-docs
+          uri: http://localhost:8086
+          predicates:
+            - Path=/inventario/v3/api-docs
+
+        - id: cola-docs
+          uri: http://localhost:8087
+          predicates:
+            - Path=/cola/v3/api-docs
+
+        - id: calidad-docs
+          uri: http://localhost:8088
+          predicates:
+            - Path=/calidad/v3/api-docs
+
+        - id: retiros-docs
+          uri: http://localhost:8089
+          predicates:
+            - Path=/retiros/v3/api-docs
+
         - id: profesores-service
           uri: http://localhost:8081
           predicates:
             - Path=/profesores/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: asignaturas-service
           uri: http://localhost:8082
           predicates:
             - Path=/asignaturas/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: cursos-service
           uri: http://localhost:8083
           predicates:
             - Path=/cursos/**
           filters:
-             - AuthenticationFilter
-            
+            - AuthenticationFilter
+
         - id: historial-service
           uri: http://localhost:8084
           predicates:
             - Path=/historial/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: impresiones-service
           uri: http://localhost:8085
           predicates:
             - Path=/impresiones/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: inventario-service
           uri: http://localhost:8086
           predicates:
             - Path=/inventario/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: cola-service
           uri: http://localhost:8087
           predicates:
             - Path=/cola/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: calidad-service
           uri: http://localhost:8088
           predicates:
             - Path=/calidad/**
           filters:
-             - AuthenticationFilter
+            - AuthenticationFilter
 
         - id: retiros-service
           uri: http://localhost:8089
           predicates:
             - Path=/retiros/**
           filters:
-             - AuthenticationFilter
-
-        - id: auth-service
-          uri: http://localhost:8090
-          predicates:
-            - Path=/auth/**
+            - AuthenticationFilter
 
 springdoc:
   swagger-ui:
@@ -100,3 +146,5 @@ springdoc:
         url: /calidad/v3/api-docs
       - name: Retiros
         url: /retiros/v3/api-docs
+      - name: Auth
+        url: /auth/v3/api-docs

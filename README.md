@@ -24,8 +24,8 @@ El sistema permite administrar profesores, asignaturas, cursos, impresiones, his
 - Mockito
 - Postman
 - GitHub
--Spring Security
--JWT
+- Spring Security
+- JWT
 
 ## Arquitectura del proyecto
 
